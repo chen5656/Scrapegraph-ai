@@ -1,4 +1,6 @@
 import os
+# python scrape_hvac.py
+
 import sys
 import json
 import logging
@@ -9,10 +11,9 @@ sys.path.append(os.getcwd())
 try:
     from scrapegraphai.graphs import SmartScraperGraph
 except ImportError:
-    print("Could not import scrapegraphai. Installing dependencies...")
-    import subprocess
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "-e", "."])
-    from scrapegraphai.graphs import SmartScraperGraph
+    print("Could not import scrapegraphai. ")
+    exit(1)
+    
 
 # Setup logging
 logging.basicConfig(
@@ -103,6 +104,7 @@ def scrape_hvac_error_codes():
 
         except Exception as e:
             logging.error(f"Could not scrape {brand}: {e}")
+            exit(1)
 
     # Output the final JSON
     output_file = 'hvac_error_codes.json'
