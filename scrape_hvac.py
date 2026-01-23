@@ -1,5 +1,10 @@
+# Run with:
+# source .venv/bin/activate
+# ./.venv/bin/python3 scrape_hvac.py
+
 import os
-# python scrape_hvac.py
+from dotenv import load_dotenv
+load_dotenv()
 
 import sys
 import json

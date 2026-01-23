@@ -17,7 +17,7 @@ try:
         
         client = genai.Client(api_key=api_key)
         response = client.models.generate_content(
-            model="gemini-2.0-flash-exp", # Fallback for testing if 3 doesn't exist
+            model="gemini-2.5-flash", 
             contents="Explain how AI works in a few words",
         )
         print(f"Gemini Response: {response.text}")
