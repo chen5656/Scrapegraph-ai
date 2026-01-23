@@ -184,6 +184,9 @@ class AbstractGraph(ABC):
                 if llm_params["model"] in models_d
             ]
             if len(possible_providers) <= 0:
+                print("ERROR")
+                print("Possible providers: ", possible_providers)
+                print("Models: ", models_tokens)
                 raise ValueError(
                     f"""Provider {llm_params["model_provider"]} is not supported.
                                 If possible, try to use a model instance instead."""
