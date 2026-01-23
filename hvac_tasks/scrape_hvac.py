@@ -5,7 +5,10 @@
 import os
 import sys
 import logging
-from typing import List, Optional
+import json
+from datetime import datetime
+from pathlib import Path
+from typing import List, Optional, Dict, Any
 from pydantic import BaseModel, Field
 
 from dotenv import load_dotenv
@@ -29,7 +32,8 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)],
 )
 
-OUTPUT_FILENAME = "hvac_error_codes.md"
+# Directory for results
+OUTPUT_DIR = "output"
 
 # Define the schema for the output
 class ErrorCode(BaseModel):
@@ -77,9 +81,9 @@ def get_graph_config():
     }
 
 
-def save_progress(lines: List[str], output_path: str) -> None:
+def save_brand_json(brand_data: Dict[str, Any], output_path: str) -> None:
     with open(output_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines).rstrip() + "\n")
+        json.dump(brand_data, f, indent=4, ensure_ascii=False)
 
 
 def scrape_hvac_error_codes_list():
@@ -98,10 +102,10 @@ def scrape_hvac_error_codes_list():
     ]
 
     graph_config = get_graph_config()
-    output_file = os.path.join(os.path.dirname(__file__), OUTPUT_FILENAME)
     
-    markdown_lines = ["# HVAC Error Codes", ""]
-    save_progress(markdown_lines, output_file)
+    # Create output directory
+    output_dir = Path(__file__).parent / OUTPUT_DIR
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     for brand in brands:
         url = f"{base_url}{brand}/"
@@ -120,41 +124,41 @@ def scrape_hvac_error_codes_list():
                 schema=BrandErrorCodes
             )
 
-            # SmartScraperGraph handles fetching, chunking, and JSON repair automatically.
             result = smart_scraper.run()
             
-            # The result will adhere to the BrandErrorCodes schema (or be a dict mimicking it)
-            # Depending on the version/LLM, it might be a dict or a Pydantic object.
             error_codes = []
             if isinstance(result, dict):
                 error_codes = result.get("error_codes", [])
             elif hasattr(result, "error_codes"):
                 error_codes = result.error_codes
 
-            brand_title = brand.replace("-", " ").title()
-            markdown_lines.append(f"## {brand_title}")
+            # Normalize error codes to a list of dicts
+            normalized_codes = []
+            for item in error_codes:
+                if isinstance(item, dict):
+                    normalized_codes.append(item)
+                else:
+                    normalized_codes.append({
+                        "code": item.code,
+                        "description": item.description
+                    })
 
-            if not error_codes:
-                markdown_lines.append("- (none)")
-            else:
-                for item in error_codes:
-                    code = item.get("code") if isinstance(item, dict) else item.code
-                    desc = item.get("description") if isinstance(item, dict) else item.description
-                    if desc:
-                        markdown_lines.append(f"- {code}: {desc}")
-                    else:
-                        markdown_lines.append(f"- {code}")
-            
-            markdown_lines.append("")
-            save_progress(markdown_lines, output_file)
+            brand_data = {
+                "brand": brand,
+                "error_codes": normalized_codes,
+                "last_updated": datetime.now().isoformat()
+            }
+
+            output_file = output_dir / f"{brand}.json"
+            save_brand_json(brand_data, str(output_file))
+            logging.info(f"Saved {brand} to {output_file}")
 
         except Exception as e:
             logging.error(f"Could not scrape {brand}: {e}")
-            # Continue to next brand instead of hard exit, to get as much data as possible
-            raise
+            # Continue to next brand instead of hard exit
+            continue
 
-    logging.info(f"\nScraping complete! Data saved to {output_file}")
-    return markdown_lines
+    logging.info(f"\nScraping complete! Data saved in {output_dir}")
 
 
 if __name__ == "__main__":

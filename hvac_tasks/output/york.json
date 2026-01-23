@@ -1,0 +1,450 @@
+{
+    "brand": "york",
+    "error_codes": [
+        {
+            "code": "E0",
+            "description": "Indoor EEPROM (Electrically Erasable Programmable Read-Only Memory) error."
+        },
+        {
+            "code": "E1",
+            "description": "Indoor and outdoor unit communication malfunction."
+        },
+        {
+            "code": "E3",
+            "description": "Indoor fan speed malfunction."
+        },
+        {
+            "code": "E4",
+            "description": "Indoor room temperature sensor error."
+        },
+        {
+            "code": "E5",
+            "description": "Evaporator coil temperature sensor error."
+        },
+        {
+            "code": "EC",
+            "description": "Refrigerant leak detection system malfunction."
+        },
+        {
+            "code": "EE",
+            "description": "Water level alarm malfunction."
+        },
+        {
+            "code": "E8",
+            "description": "Dual indoor unit (twin model only) communication malfunction."
+        },
+        {
+            "code": "E9",
+            "description": "Other twin model malfunction."
+        },
+        {
+            "code": "F0",
+            "description": "Overload protection."
+        },
+        {
+            "code": "F1",
+            "description": "Outdoor temperature sensor error."
+        },
+        {
+            "code": "F2",
+            "description": "Outdoor condenser pipe sensor error."
+        },
+        {
+            "code": "F3",
+            "description": "Discharge air temperature sensor error."
+        },
+        {
+            "code": "F4",
+            "description": "Outdoor EEPROM (Electrically Erasable Programmable Read-Only Memory) error."
+        },
+        {
+            "code": "F5",
+            "description": "Outdoor fan speed (DC fan motor only) malfunction."
+        },
+        {
+            "code": "F6",
+            "description": "T2b sensor error."
+        },
+        {
+            "code": "F7",
+            "description": "Auto-lifting panel communication error."
+        },
+        {
+            "code": "F8",
+            "description": "Auto-lifting panel malfunction."
+        },
+        {
+            "code": "F9",
+            "description": "Auto-lifting panel is open."
+        },
+        {
+            "code": "P0",
+            "description": "Inverter module IPM protection."
+        },
+        {
+            "code": "P1",
+            "description": "High/Low voltage protection."
+        },
+        {
+            "code": "P2",
+            "description": "Compressor top overheating protection."
+        },
+        {
+            "code": "P3",
+            "description": "Outdoor low temperature protection."
+        },
+        {
+            "code": "P4",
+            "description": "Compressor drive error."
+        },
+        {
+            "code": "P5",
+            "description": "Mode conflict."
+        },
+        {
+            "code": "P6",
+            "description": "Compressor low-pressure protection."
+        },
+        {
+            "code": "P7",
+            "description": "Outdoor IGBT sensor error."
+        },
+        {
+            "code": "H3",
+            "description": "Outdoor adding malfunction (valid for host unit)."
+        },
+        {
+            "code": "H2",
+            "description": "Outdoor decreasing malfunction (valid for host unit)."
+        },
+        {
+            "code": "H1",
+            "description": "Net communication malfunction."
+        },
+        {
+            "code": "EF",
+            "description": "Other malfunction."
+        },
+        {
+            "code": "E4",
+            "description": "Temp. Sensor malfunction."
+        },
+        {
+            "code": "T4",
+            "description": "Temp. Sensor malfunction."
+        },
+        {
+            "code": "E3",
+            "description": "Temp. Sensor malfunction."
+        },
+        {
+            "code": "T3",
+            "description": "Temp. Sensor malfunction."
+        },
+        {
+            "code": "E2",
+            "description": "Sensor malfunction."
+        },
+        {
+            "code": "E1",
+            "description": "Communication malfunction Phase sequence or lack of phase."
+        },
+        {
+            "code": "E0",
+            "description": "Communication malfunction Phase sequence or lack of phase."
+        },
+        {
+            "code": "PF",
+            "description": "Other Protection."
+        },
+        {
+            "code": "PE",
+            "description": "Oil Balance."
+        },
+        {
+            "code": "PD",
+            "description": "Oil Return."
+        },
+        {
+            "code": "PA",
+            "description": "Defrost Protection."
+        },
+        {
+            "code": "P8",
+            "description": "Compressor Current 3rd Protection."
+        },
+        {
+            "code": "P7",
+            "description": "Compressor Current 2nd Protection."
+        },
+        {
+            "code": "P5",
+            "description": "Condenser High Temp. Protection."
+        },
+        {
+            "code": "P4",
+            "description": "Discharge Pipe Temp. Protection."
+        },
+        {
+            "code": "P3",
+            "description": "Compressor Current 1st Protection."
+        },
+        {
+            "code": "P2",
+            "description": "Discharge Low- pressure Protection."
+        },
+        {
+            "code": "P1",
+            "description": "Discharge High- pressure Protection Compressor High Temp. Protection."
+        },
+        {
+            "code": "P0",
+            "description": "Discharge High- pressure Protection Compressor High Temp. Protection."
+        },
+        {
+            "code": "E1",
+            "description": "Phase sequence error."
+        },
+        {
+            "code": "E2",
+            "description": "Communication malfunction between indoor/outdoor units."
+        },
+        {
+            "code": "E3",
+            "description": "T3 temperature sensor malfunction."
+        },
+        {
+            "code": "E4",
+            "description": "T4 temperature sensor malfunction."
+        },
+        {
+            "code": "E5",
+            "description": "T5 temperature sensor malfunction."
+        },
+        {
+            "code": "E6",
+            "description": "Water-level alarm malfunction."
+        },
+        {
+            "code": "EF",
+            "description": "Other malfunction"
+        },
+        {
+            "code": "PF",
+            "description": "Other Protection"
+        },
+        {
+            "code": "EE",
+            "description": "Water level checking malfunction"
+        },
+        {
+            "code": "PE",
+            "description": "Reserve"
+        },
+        {
+            "code": "ED",
+            "description": "Outdoor protection"
+        },
+        {
+            "code": "PD",
+            "description": "Reserve"
+        },
+        {
+            "code": "EC",
+            "description": "Clear malfunction"
+        },
+        {
+            "code": "PC",
+            "description": "Reserve"
+        },
+        {
+            "code": "EB",
+            "description": "Inverter Module Protection"
+        },
+        {
+            "code": "PB",
+            "description": "Reserve"
+        },
+        {
+            "code": "EA",
+            "description": "Compressor Over-current (4 times)"
+        },
+        {
+            "code": "PA",
+            "description": "Reserve"
+        },
+        {
+            "code": "E9",
+            "description": "Communication malfunction between PCB and Display board"
+        },
+        {
+            "code": "P9",
+            "description": "Reserve"
+        },
+        {
+            "code": "E8",
+            "description": "Fan motor checking out of control"
+        },
+        {
+            "code": "P8",
+            "description": "Compressor Over-current"
+        },
+        {
+            "code": "E7",
+            "description": "EEPROM malfunction"
+        },
+        {
+            "code": "P7",
+            "description": "Power Lack/Over Volt Protection"
+        },
+        {
+            "code": "E6",
+            "description": "Over-zero checking malfunction"
+        },
+        {
+            "code": "P6",
+            "description": "Discharge Low-pressure Protection"
+        },
+        {
+            "code": "E5",
+            "description": "T3 sensor malfunction"
+        },
+        {
+            "code": "P5",
+            "description": "Discharge High-pressure Protection"
+        },
+        {
+            "code": "E4",
+            "description": "T2B sensor malfunction"
+        },
+        {
+            "code": "P4",
+            "description": "Discharge Pipe Temp. Protection"
+        },
+        {
+            "code": "E3",
+            "description": "T2A sensor malfunction"
+        },
+        {
+            "code": "P3",
+            "description": "Compressor Temp. Protection"
+        },
+        {
+            "code": "E2",
+            "description": "T1 sensor malfunction"
+        },
+        {
+            "code": "P2",
+            "description": "Condenser High Temp. Protection"
+        },
+        {
+            "code": "E1",
+            "description": "Communication malfunction"
+        },
+        {
+            "code": "P1",
+            "description": "Anti-cooling or Defrost Protection"
+        },
+        {
+            "code": "E0",
+            "description": "Phase sequence or lack of phase"
+        },
+        {
+            "code": "P0",
+            "description": "Evaporator Temp. Protection"
+        },
+        {
+            "code": "03#",
+            "description": "CCM/PC(gateway) Communication Malfunction."
+        },
+        {
+            "code": "02#",
+            "description": "CCM/Function Module Communication Malfunction."
+        },
+        {
+            "code": "01#",
+            "description": "CCM/NIM Communication Malfunction."
+        },
+        {
+            "code": "00#",
+            "description": "CCM/PCB Communication Malfunction."
+        },
+        {
+            "code": "E7",
+            "description": "Communication fault between indoor and outdoor units."
+        },
+        {
+            "code": "E1",
+            "description": "Room temperature sensor failure."
+        },
+        {
+            "code": "E4",
+            "description": "Indoor EEPROM error."
+        },
+        {
+            "code": "E14",
+            "description": "Indoor fan motor malfunction."
+        },
+        {
+            "code": "F12",
+            "description": "Outdoor EEPROM error."
+        },
+        {
+            "code": "F1",
+            "description": "The protection of IPM."
+        },
+        {
+            "code": "F22",
+            "description": "Overcurrent protection of AC electricity for the outdoor model."
+        },
+        {
+            "code": "F3",
+            "description": "Communication fault between the IPM and outdoor PCB."
+        },
+        {
+            "code": "F19",
+            "description": "Power voltage is too high or low."
+        },
+        {
+            "code": "F4",
+            "description": "Overheat protection for Discharge temperature."
+        },
+        {
+            "code": "F8",
+            "description": "Outdoor DC fan motor fault."
+        },
+        {
+            "code": "F21",
+            "description": "Defrost temperature sensor failure."
+        },
+        {
+            "code": "F7",
+            "description": "Suction temperature sensor failure."
+        },
+        {
+            "code": "F6",
+            "description": "Ambient temperature sensor failure."
+        },
+        {
+            "code": "F25",
+            "description": "Discharge temperature sensor failure."
+        },
+        {
+            "code": "F11",
+            "description": "deviate from the normal for the compressor."
+        },
+        {
+            "code": "F28",
+            "description": "Loop of the station detect error."
+        },
+        {
+            "code": "F2",
+            "description": "Overcurrent of the compressor."
+        },
+        {
+            "code": "F23",
+            "description": "Overcurrent protection for single-phase of the compressor."
+        }
+    ],
+    "last_updated": "2026-01-23T10:23:26.783425"
+}
